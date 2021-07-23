@@ -20,6 +20,9 @@
         <mysql.version>5.1.47</mysql.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <swagger.version>2.7.0</swagger.version>
+        <spark-mllib.version>2.4.3</spark-mllib.version>
+        <mongo-spark-connector.version>2.4.1</mongo-spark-connector.version>
+        <pool2.version>2.6.0</pool2.version>
     </properties>
 
     <dependencies>
@@ -63,6 +66,23 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
+        </dependency>
+        <!-- spark相关 -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.12</artifactId>
+            <version>${spark-mllib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb.spark</groupId>
+            <artifactId>mongo-spark-connector_2.12</artifactId>
+            <version>${mongo-spark-connector.version}</version>
+        </dependency>
+        <!-- commons-pool2 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${pool2.version}</version>
         </dependency>
         <!-- 测试相关 -->
         <dependency>
