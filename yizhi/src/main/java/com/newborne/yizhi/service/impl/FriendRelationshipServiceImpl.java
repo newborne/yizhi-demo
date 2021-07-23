@@ -18,8 +18,8 @@ public class FriendRelationshipServiceImpl implements FriendRelationshipService 
     private FriendRelationshipRepository relationshipRepository;
 
     @Override
-    public FriendRelationship addFriendRelationship(Friend start, Friend end, String remark) {
-        FriendRelationship relationship= FriendRelationship.builder().start(start).end(end).remark(remark).build();
+    public FriendRelationship addFriendRelationship(Friend start, Friend end, Double similarity,String remark) {
+        FriendRelationship relationship= FriendRelationship.builder().start(start).end(end).similarity(similarity).remark(remark).build();
         return relationshipRepository.save(relationship);
     }
 

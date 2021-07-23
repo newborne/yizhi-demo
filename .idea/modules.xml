@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/yizhi/yizhi.iml" filepath="$PROJECT_DIR$/yizhi/yizhi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/yizhi-demo.iml" filepath="$PROJECT_DIR$/.idea/yizhi-demo.iml" />
     </modules>
   </component>
 </project>

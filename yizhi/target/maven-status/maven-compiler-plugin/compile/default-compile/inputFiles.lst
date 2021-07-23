@@ -1,0 +1,17 @@
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\pojo\FriendRecommend.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\pojo\FriendInfo.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\repository\FriendRecommendRepository.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\config\RedisConfig.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\entity\node\Friend.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\enums\SexEnum.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\mapper\FriendInfoMapper.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\service\impl\FriendRelationshipServiceImpl.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\service\FriendRelationshipService.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\utils\SparkFriendRecommend.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\entity\relationship\FriendRelationship.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\config\Swagger2Config.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\repository\FriendRepository.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\repository\FriendRelationshipRepository.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\YizhiApplication.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\config\YizhiConfig.java
+C:\Users\Administrator\Desktop\GitProjects\newborne\Individuals\yizhi-demo\yizhi\src\main\java\com\newborne\yizhi\utils\MLlibRecommend.java

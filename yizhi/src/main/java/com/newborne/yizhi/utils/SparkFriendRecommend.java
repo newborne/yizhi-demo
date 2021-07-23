@@ -32,7 +32,7 @@ public class SparkFriendRecommend {
 
         // 构建Spark配置
         SparkConf sparkConf = new SparkConf()
-                .setAppName("SparkUserRecommend")
+                .setAppName("SparkFriendRecommend")
                 .setMaster("local[*]")
                 .set("spark.mongodb.output.uri", properties.getProperty("spark.mongodb.output.friend.uri"));
 
