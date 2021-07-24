@@ -20,14 +20,17 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
+/**
+ * The type Redis config.
+ */
 @Configuration
 @EnableCaching
 public class RedisConfig {
 
     /**
-     * 自定义key规则
+     * Key generator key generator.
      *
-     * @return
+     * @return the key generator
      */
     @Bean
     public KeyGenerator keyGenerator() {
@@ -46,10 +49,10 @@ public class RedisConfig {
     }
 
     /**
-     * 设置RedisTemplate规则
+     * Redis template redis template.
      *
-     * @param redisConnectionFactory
-     * @return
+     * @param redisConnectionFactory the redis connection factory
+     * @return the redis template
      */
     @Bean
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
@@ -75,10 +78,10 @@ public class RedisConfig {
     }
 
     /**
-     * 设置CacheManager缓存规则
+     * Cache manager cache manager.
      *
-     * @param factory
-     * @return
+     * @param factory the factory
+     * @return the cache manager
      */
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory factory) {

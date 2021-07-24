@@ -7,8 +7,17 @@ import org.apache.spark.mllib.recommendation.MatrixFactorizationModel;
 import org.apache.spark.mllib.recommendation.Rating;
 import scala.Tuple2;
 
+/**
+ * The type M llib recommend.
+ */
 public class MLlibRecommend {
 
+    /**
+     * Best model matrix factorization model.
+     *
+     * @param ratings the ratings
+     * @return the matrix factorization model
+     */
     public MatrixFactorizationModel bestModel(JavaPairRDD<Long, Rating> ratings){
         //统计有用户数量和电影数量以及用户对电影的评分数目
         Long numRatings = ratings.count();
@@ -102,8 +111,13 @@ public class MLlibRecommend {
     }
 
     /**
-     * 校验集预测数据和实际数据之间的均方根误差
-     **/
+     * Compute rmse double.
+     *
+     * @param model the model
+     * @param data  the data
+     * @param n     the n
+     * @return the double
+     */
     public  Double computeRmse(MatrixFactorizationModel model, JavaRDD<Rating> data, Long n) {
         // 进行预测
         JavaRDD<Rating> predictions = model.predict(data.mapToPair(v -> new Tuple2<>(v.user(), v.product())));

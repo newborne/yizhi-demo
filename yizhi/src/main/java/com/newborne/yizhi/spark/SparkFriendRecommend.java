@@ -21,8 +21,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * The type Spark friend recommend.
+ */
 public class SparkFriendRecommend {
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception {
         //加载外部的配置文件，app.properties
         InputStream inputStream = SparkFriendRecommend.class.getClassLoader().getResourceAsStream("app.properties");
@@ -71,7 +80,7 @@ public class SparkFriendRecommend {
             double similarity = 0;
 
             //计算年龄差
-            int ageDiff = Math.abs(row1.getInt(6) - row2.getInt(6));
+            int ageDiff = Math.abs(row1.getInt(4) - row2.getInt(4));
             if (ageDiff <= 2) {
                 similarity += 70;
             } else if (ageDiff >= 3 && ageDiff <= 5) {
@@ -81,13 +90,13 @@ public class SparkFriendRecommend {
             }
 
             // 计算性别
-            if (row1.getInt(5) != row2.getInt(5)) {
+            if (row1.getInt(6) != row2.getInt(6)) {
                 similarity += 10;
             }
 
             // 计算城市
-            String city1 = StringUtils.substringBefore(row1.getString(8), "-");
-            String city2 = StringUtils.substringBefore(row2.getString(8), "-");
+            String city1 = StringUtils.substringBefore(row1.getString(7), "-");
+            String city2 = StringUtils.substringBefore(row2.getString(7), "-");
             if (StringUtils.equals(city1, city2)) {
                 similarity += 20;
             }

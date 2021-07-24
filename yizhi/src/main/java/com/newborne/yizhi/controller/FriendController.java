@@ -9,6 +9,7 @@ import com.newborne.yizhi.service.FriendRecommendService;
 import com.newborne.yizhi.service.FriendService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +18,11 @@ import java.util.List;
 
 
 /**
- * @author 刘博文
- * @date 2021/07/20 20:43
+ * The type Friend controller.
  */
 @Controller
 @RequestMapping("/api/friend")
-@Api(tags = "朋友（neo4j）")
+@Api(tags = "朋友（Neo4j）")
 @CrossOrigin
 public class FriendController {
 
@@ -34,19 +34,22 @@ public class FriendController {
     private FriendRecommendService friendRecommendService;
 
     /**
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Find by id api response.
+     *
+     * @param uuid the uuid
+     * @return the api response
      */
-    @GetMapping("/{id}")
+    @GetMapping("/{uu   id}")
     @ResponseBody
-    @ApiOperation("查-by-id")
-    public ApiResponse<Friend> findById(@PathVariable Long id) {
-        return ApiResponse.success(friendService.findById(id));
+    @ApiOperation("查-by-uuid")
+    public ApiResponse<Friend> findById(@PathVariable Long uuid) {
+        return ApiResponse.success(friendService.findByUuid(uuid));
     }
 
     /**
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Find all api response.
+     *
+     * @return the api response
      */
     @GetMapping("/findAll")
     @ResponseBody
@@ -56,20 +59,31 @@ public class FriendController {
     }
 
     /**
-     * @return
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Save api response.
+     *
+     * @return the api response
      */
-    @GetMapping("/saveRelationship")
+    @GetMapping("/save")
     @ResponseBody
-    @ApiOperation("增-联系")
+    @ApiOperation("增-结点&联系")
     public ApiResponse save() {
         List<FriendInfo> friendInfos = friendInfoService.findAll();
         for (FriendInfo friendInfo : friendInfos) {
-            List<FriendRecommend> friendRecommends = friendRecommendService.findAllByEnd(friendInfo.getId());
+            Friend friend = Friend.builder()
+                    .city(friendInfo.getCity())
+                    .remark(friendInfo.getRemark())
+                    .sex(friendInfo.getSex())
+                    .age(friendInfo.getAge())
+                    .name(friendInfo.getName())
+                    .mobile(friendInfo.getMobile())
+                    .uuid(friendInfo.getUuid()).build();
+            friendService.addFriend(friend);
+        }
+        for (FriendInfo friendInfo : friendInfos) {
+            List<FriendRecommend> friendRecommends = friendRecommendService.findFriendRecommendByEnd(friendInfo.getId());
             for (FriendRecommend friendRecommend : friendRecommends) {
-                Friend start = friendService.findById(friendRecommend.getStart() - 1);
-                Friend end = friendService.findById(friendInfo.getId() - 1);
+                Friend start = friendService.findByUuid(friendRecommend.getStart());
+                Friend end = friendService.findByUuid(friendInfo.getId());
                 friendService.addFriendRelationship(start, end, friendRecommend.getSimilarity(), friendRecommend.getRemark());
             }
         }

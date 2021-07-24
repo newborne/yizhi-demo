@@ -8,12 +8,18 @@ import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
+/**
+ * The type Friend info.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class FriendInfo {
 
     private Long id;
+
+    // 唯一id
+    private Long uuid;
 
     // 联系方式
     private String mobile;

@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * @author 刘博文
- * @date 2021/07/20 20:43
+ * The type Friend info controller.
  */
 @Controller
 @RequestMapping("/api/friendInfo")
@@ -24,8 +23,10 @@ public class FriendInfoController {
     private FriendInfoService friendInfoService;
 
     /**
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Create api response.
+     *
+     * @param friendInfo the friend info
+     * @return the api response
      */
     @PostMapping("/create")
     @ResponseBody
@@ -35,8 +36,10 @@ public class FriendInfoController {
     }
 
     /**
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Find by id api response.
+     *
+     * @param id the id
+     * @return the api response
      */
     @GetMapping("/{id}")
     @ResponseBody
@@ -46,8 +49,9 @@ public class FriendInfoController {
     }
 
     /**
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Find all api response.
+     *
+     * @return the api response
      */
     @GetMapping("/findAll")
     @ResponseBody

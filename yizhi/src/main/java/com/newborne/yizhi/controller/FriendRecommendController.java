@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * @author 刘博文
- * @date 2021/07/20 20:43
+ * The type Friend recommend controller.
  */
 @Controller
 @RequestMapping("/api/friendRecommend")
@@ -24,13 +23,15 @@ public class FriendRecommendController {
     private FriendRecommendService friendRecommendService;
 
     /**
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Find all by end api response.
+     *
+     * @param end the end
+     * @return the api response
      */
     @GetMapping("/{end}")
     @ResponseBody
     @ApiOperation("查-by-end")
-    public ApiResponse<FriendRecommend> findAllByEnd(@PathVariable Long end) {
-        return ApiResponse.success(friendRecommendService.findAllByEnd(end));
+    public ApiResponse<FriendRecommend> findFriendRecommendByEnd(@PathVariable Long end) {
+        return ApiResponse.success(friendRecommendService.findFriendRecommendByEnd(end));
     }
 }

@@ -8,6 +8,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * The type Friend recommend.
+ */
 //lombok注解，简化javabean编写（Structure中就有了get和set，不需要自己编写）
 //全参数
 @AllArgsConstructor

@@ -1,18 +1,26 @@
 package com.newborne.yizhi.entity.node;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import lombok.Builder;
 import lombok.Data;
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.*;
 
-@NodeEntity
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * The type Friend.
+ */
+@NodeEntity(label = "Friend")
 @Data
 @Builder
 public class Friend {
     @Id
     @GeneratedValue
     private Long id;
+
+    // 唯一id
+    private Long uuid;
 
     // 联系方式
     private String mobile;

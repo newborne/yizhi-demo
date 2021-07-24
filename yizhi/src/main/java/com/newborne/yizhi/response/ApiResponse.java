@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * 接口返回对象
- * @author 刘博文
- * @date 2021/07/20 20:43
+ * The type Api response.
+ *
+ * @param <T> the type parameter
  */
 @Data
 @AllArgsConstructor
@@ -19,36 +19,42 @@ public class ApiResponse<T> {
     private T data;
 
     /**
-     * 请求成功
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Success api response.
+     *
+     * @param <T>  the type parameter
+     * @param data the data
+     * @return the api response
      */
     public static <T> ApiResponse success(T data) {
         return ApiResponse.success("请求成功", data);
     }
 
     /**
-     * 请求成功
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Success api response.
+     *
+     * @param <T>     the type parameter
+     * @param message the message
+     * @param data    the data
+     * @return the api response
      */
     public static <T> ApiResponse success(String message, T data) {
         return new ApiResponse(Boolean.TRUE, message, data);
     }
 
     /**
-     * 请求失败
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * Failed api response.
+     *
+     * @return the api response
      */
     public static ApiResponse failed() {
         return ApiResponse.failed("请求失败");
     }
 
     /**
-     * 请求失败
-     * @author 刘博文
-     * @date 2020-03-07 11:06
+     * Failed api response.
+     *
+     * @param message the message
+     * @return the api response
      */
     public static ApiResponse failed(String message) {
         return new ApiResponse(Boolean.FALSE, message, null);

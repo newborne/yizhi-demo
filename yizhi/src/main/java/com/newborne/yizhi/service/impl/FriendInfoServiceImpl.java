@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * The type Friend info service.
+ */
 @Service
 public class FriendInfoServiceImpl extends ServiceImpl<FriendInfoMapper, FriendInfo> implements FriendInfoService {
 
@@ -30,6 +33,7 @@ public class FriendInfoServiceImpl extends ServiceImpl<FriendInfoMapper, FriendI
     }
 
     @Override
+    @Cacheable(value = "friendInfo", keyGenerator = "keyGenerator")
     public List<FriendInfo> findAll() {
         QueryWrapper<FriendInfo> queryWrapper = new QueryWrapper<>();
         return baseMapper.selectList(queryWrapper);

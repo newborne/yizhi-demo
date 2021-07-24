@@ -7,6 +7,9 @@ import lombok.Data;
 import org.neo4j.ogm.annotation.*;
 
 
+/**
+ * The type Friend relationship.
+ */
 @Data
 @Builder
 @RelationshipEntity(type = "Relationship")

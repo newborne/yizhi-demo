@@ -6,33 +6,30 @@ import com.newborne.yizhi.pojo.FriendInfo;
 import java.util.List;
 
 /**
- * 示例业务
- * @author 刘博文
- * @date 2021/07/20 20:43
+ * The interface Friend info service.
  */
 public interface FriendInfoService {
 
     /**
-     * 增
+     * Create int.
      *
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * @param friendInfo the friend info
+     * @return the int
      */
     int create(FriendInfo friendInfo);
 
     /**
-     * 查-by-id
+     * Find by id friend info.
      *
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * @param id the id
+     * @return the friend info
      */
     FriendInfo findById(Integer id);
 
     /**
-     * 查-所有
+     * Find all list.
      *
-     * @author 刘博文
-     * @date 2021/07/20 20:43
+     * @return the list
      */
     List<FriendInfo> findAll();
 }
