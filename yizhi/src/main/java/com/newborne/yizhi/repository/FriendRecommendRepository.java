@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface FriendRecommendRepository extends MongoRepository<FriendRecommend,String> {
-    //判断是否存在数据
+    // 获取所有
     List<FriendRecommend> findAllByEnd(Long end);
 }

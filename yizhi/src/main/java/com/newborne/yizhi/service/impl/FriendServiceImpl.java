@@ -3,14 +3,14 @@ package com.newborne.yizhi.service.impl;
 
 import com.newborne.yizhi.entity.node.Friend;
 import com.newborne.yizhi.entity.relationship.FriendRelationship;
-import com.newborne.yizhi.repository.FriendRepository;
 import com.newborne.yizhi.repository.FriendRelationshipRepository;
-import com.newborne.yizhi.service.FriendRelationshipService;
+import com.newborne.yizhi.repository.FriendRepository;
+import com.newborne.yizhi.service.FriendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FriendRelationshipServiceImpl implements FriendRelationshipService {
+public class FriendServiceImpl implements FriendService {
     @Autowired
     private FriendRepository friendRepository;
 
@@ -18,8 +18,8 @@ public class FriendRelationshipServiceImpl implements FriendRelationshipService 
     private FriendRelationshipRepository relationshipRepository;
 
     @Override
-    public FriendRelationship addFriendRelationship(Friend start, Friend end, Double similarity,String remark) {
-        FriendRelationship relationship= FriendRelationship.builder().start(start).end(end).similarity(similarity).remark(remark).build();
+    public FriendRelationship addFriendRelationship(Friend start, Friend end, Double similarity, String remark) {
+        FriendRelationship relationship = FriendRelationship.builder().start(start).end(end).similarity(similarity).remark(remark).build();
         return relationshipRepository.save(relationship);
     }
 

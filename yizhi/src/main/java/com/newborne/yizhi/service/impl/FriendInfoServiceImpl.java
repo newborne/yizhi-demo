@@ -1,18 +1,17 @@
 package com.newborne.yizhi.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.newborne.yizhi.mapper.FriendInfoMapper;
 import com.newborne.yizhi.pojo.FriendInfo;
 import com.newborne.yizhi.service.FriendInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-@Service
-public class FriendInfoServiceImpl extends ServiceImpl<FriendInfoMapper, FriendInfo>  implements FriendInfoService {
+import java.util.List;
 
-    @Autowired
-    private FriendInfoMapper friendInfoMapper;
+@Service
+public class FriendInfoServiceImpl extends ServiceImpl<FriendInfoMapper, FriendInfo> implements FriendInfoService {
 
     @Override
     public int create(FriendInfo friendInfo) {
@@ -25,10 +24,14 @@ public class FriendInfoServiceImpl extends ServiceImpl<FriendInfoMapper, FriendI
     }
 
     @Override
-    @Cacheable(value = "friendInfo",keyGenerator = "keyGenerator")
+    @Cacheable(value = "friendInfo", keyGenerator = "keyGenerator")
     public FriendInfo findById(Integer id) {
-        return friendInfoMapper.selectById(id);
+        return baseMapper.selectById(id);
     }
 
-
+    @Override
+    public List<FriendInfo> findAll() {
+        QueryWrapper<FriendInfo> queryWrapper = new QueryWrapper<>();
+        return baseMapper.selectList(queryWrapper);
+    }
 }

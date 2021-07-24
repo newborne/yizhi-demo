@@ -1,4 +1,4 @@
-package com.newborne.yizhi.utils;
+package com.newborne.yizhi.spark;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;

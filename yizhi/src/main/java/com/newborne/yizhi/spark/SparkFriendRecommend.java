@@ -1,4 +1,4 @@
-package com.newborne.yizhi.utils;
+package com.newborne.yizhi.spark;
 
 import com.mongodb.spark.MongoSpark;
 import org.apache.commons.lang3.RandomUtils;
@@ -13,7 +13,6 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.bson.Document;
 import org.bson.types.ObjectId;
-import org.joda.time.DateTime;
 import scala.Tuple2;
 
 import java.io.InputStream;

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping("/api/friendInfo")
-@Api(tags = "用户模块接口")
+@Api(tags = "朋友详情（MySql）")
 @CrossOrigin
 public class FriendInfoController {
 
@@ -29,7 +29,7 @@ public class FriendInfoController {
      */
     @PostMapping("/create")
     @ResponseBody
-    @ApiOperation("创建用户")
+    @ApiOperation("增")
     public ApiResponse<Integer> create(FriendInfo friendInfo) {
         return  ApiResponse.success(friendInfoService.create(friendInfo));
     }
@@ -40,8 +40,19 @@ public class FriendInfoController {
      */
     @GetMapping("/{id}")
     @ResponseBody
-    @ApiOperation("根据ID查询用户")
-    public ApiResponse<FriendInfo> finById(@PathVariable Integer id) {
+    @ApiOperation("查-by-id")
+    public ApiResponse<FriendInfo> findById(@PathVariable Integer id) {
         return ApiResponse.success(friendInfoService.findById(id));
+    }
+
+    /**
+     * @author 刘博文
+     * @date 2021/07/20 20:43
+     */
+    @GetMapping("/findAll")
+    @ResponseBody
+    @ApiOperation("查-全部")
+    public ApiResponse<FriendInfo> findAll() {
+        return ApiResponse.success(friendInfoService.findAll());
     }
 }
