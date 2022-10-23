@@ -10,6 +10,7 @@ import com.newborne.yizhi.pojo.FriendInfo;
  */
 public interface FriendService {
 
+    public Object deleteAll() ;
     /**
      * Add friend friend.
      *

@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * The type Friend info service.
+ * mysql
  */
 @Service
 public class FriendInfoServiceImpl extends ServiceImpl<FriendInfoMapper, FriendInfo> implements FriendInfoService {

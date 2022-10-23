@@ -1,5 +1,6 @@
 package com.newborne.yizhi.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class FriendInfo {
     private Long id;
 
     // 唯一id
+    @TableField(exist = false)
     private Long uuid;
 
     // 联系方式

@@ -17,4 +17,5 @@ public interface FriendRepository extends Neo4jRepository<Friend, Long> {
      * @return the friend
      */
     Friend findByUuid(Long uuid);
+//    Friend findByI(Long uuid);
 }
