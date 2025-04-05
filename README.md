@@ -56,7 +56,7 @@ yizhi-demo/
 1. **克隆项目**
 
    ```bash
-   git clone https://github.com/yourusername/yizhi-demo.git
+   git clone https://github.com/newborne/yizhi-demo.git
    ```
 
 2. **配置数据库**
