@@ -1,3 +1,5 @@
+> 基于SpringBoot的智能推荐Demo（入门到实战仅需一篇教程）<https://blog.csdn.net/qq_41783491/article/details/119007163>
+>
 # 智能推荐系统 yizhi-demo
 
 一个基于 SpringBoot 的智能推荐系统，整合了多种技术栈，包括 MySQL、MongoDB、Spark、Redis 和 Neo4j，提供从数据存储、处理到推荐的完整解决方案。
